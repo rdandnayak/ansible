@@ -1,0 +1,24 @@
+- hosts: localhost
+  become: true
+  pre_tasks:
+    - name: Update Cache
+      apt:
+        update_cache: true
+      tags:
+        - node
+        - zsh
+        - install
+        - dotfiles
+        - stow
+  tasks:
+    - include: tasks/zsh.yml
+    - include: tasks/node.yml
+    - include: tasks/dotfiles.yml
+    - name: Install tmux
+      apt: name=tmux
+      tags:
+        - install
+    - name: Install stow
+      apt: name=stow
+      tags:
+        - install

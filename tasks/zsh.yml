@@ -1,0 +1,53 @@
+- name: Install curl
+  apt: name=curl
+  tags:
+    - zsh
+- name: Install git
+  apt: name=git
+  tags:
+    - zsh
+- name: Install zsh
+  apt: name=zsh
+  tags:
+    - zsh
+- name: Change shell to zsh
+  shell: chsh -s `which zsh`
+  tags:
+    - zsh
+- name: Check if ohMyZsh exists
+  stat:
+    path: "~/.oh-my-zsh"
+  register: oh_my_zsh_exists
+  tags:
+    - zsh
+- name: Install ohmyzsh
+  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  when: not oh_my_zsh_exists.stat.exists
+  tags:
+    - zsh
+- name: Check if ohMyZsh exists
+  stat:
+    path: "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+  register: zsh_auto_suggestion
+  tags:
+    - zsh
+- name: Install zsh plugin for auto suggestions
+  ansible.builtin.git:
+    repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
+    dest: "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+  tags:
+    - zsh
+  when: not zsh_auto_suggestion.stat.exists
+- name: Check if ohMyZsh exists
+  stat:
+    path: "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+  register: zsh_syntax
+  tags:
+    - zsh
+- name: Install zsh plugin for syntax highlighting
+  ansible.builtin.git:
+    repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    dest: "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+  when: not zsh_syntax.stat.exists
+  tags:
+    - zsh
