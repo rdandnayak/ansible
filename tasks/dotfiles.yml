@@ -11,7 +11,7 @@
     recursive: false
     update: yes
     accept_hostkey: yes
-    version: master
+    version: main
   tags:
     - install
     - dotfiles
