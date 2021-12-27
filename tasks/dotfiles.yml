@@ -1,3 +1,9 @@
+- name: Removing existing config files
+  shell: rm ~/.zshrc
+  tags:
+    - install
+    - dotfiles
+    - stow
 - name: Installing stow
   apt: name=stow
   tags:

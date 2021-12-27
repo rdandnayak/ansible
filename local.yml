@@ -11,14 +11,13 @@
         - dotfiles
         - stow
   tasks:
+    - name: Install core packages
+      apt:
+        name: ["tmux", "stow", "cmake"]
+      tags:
+        - install
     - include: tasks/zsh.yml
+    - include: tasks/neovim.yml
     - include: tasks/node.yml
+    - include: tasks/npm-packages.yml
     - include: tasks/dotfiles.yml
-    - name: Install tmux
-      apt: name=tmux
-      tags:
-        - install
-    - name: Install stow
-      apt: name=stow
-      tags:
-        - install
