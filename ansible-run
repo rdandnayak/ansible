@@ -6,4 +6,4 @@ apt-get update -y
 apt-get install -y curl git software-properties-common ansible
 
 ## pull ansible
-ansible-pull -U https://github.com/rdandnayak/ansible.git
+# ansible-pull -U https://github.com/rdandnayak/ansible.git
