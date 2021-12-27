@@ -8,8 +8,13 @@
   tags:
     - install
     - neovim
+- name: Install vim
+  shell: add-apt-repository ppa:jonathonf/vim && apt-get install  -y vim
+  tags:
+    - install
+    - neovim
 - name: Install neovim
-  shell: add-apt-repository ppa:neovim-ppa/unstable && apt-get install  -y vim neovim
+  shell: add-apt-repository ppa:neovim-ppa/unstable && apt-get install  -y neovim
   tags:
     - install
     - neovim
