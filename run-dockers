@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-docker run -t new-computer bash
+docker run -it new-computer bash
 #docker build . -f Dockerfile -t nvim-computer
