@@ -1,6 +1,6 @@
 # Ansible for Web Development
 
-This is Ansible repository which can be used to bring your machine up-to-speed by installing all necessary tools required to develop Frontend applications
+This is Ansible repository which can be used to bring your machine up-to-speed by installing all necessary tools required to develop Web applications
 
 ## Installtions by Ansible
 
@@ -14,7 +14,7 @@ This will install following tools on your machine
     5. ts-node
 3. node version 14
 4. vim & neovim code editor
-5. necessary dotfiles required and mentioned in repo (https://github.com/rdandnayak/.dotfiles)
+5. necessary dotfiles required and mentioned in repo [link to .dotfiles repository](https://github.com/rdandnayak/.dotfiles)
 
 ## setup & installation for WSL or Ubuntu
 
@@ -25,7 +25,7 @@ you can simply clone this repository and run
 ```
 ./ansible-run
 ```
-which will take care of installing ansible on your machine, and setting up your machine with required packages as mentioned below
+which will take care of installing ansible on your machine, and setting up your machine with required packages as mentioned above
 
 ## setup and installation with docker
 
@@ -41,10 +41,12 @@ If you have docker demon & cli setup on your machine you can simply use command 
 ./run-dockers
 ```
 
-this will bring up docker container which will be ready to execute commands
+this will bring up docker container that will be ready to execute commands
 
-run command below to run ansible inside your docker interactive terminal\
+run command below to run ansible inside your docker interactive terminal
 
 ```
 ansible-playbook local.yml
 ```
+
+which will run all necessary packages in mentioned list above
