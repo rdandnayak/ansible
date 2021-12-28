@@ -1,0 +1,5 @@
+- name: Install vim
+  shell: add-apt-repository ppa:jonathonf/vim && apt-get install  -y vim
+  tags:
+    - install
+    - vim

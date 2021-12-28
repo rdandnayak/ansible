@@ -1,5 +1,13 @@
 - hosts: localhost
   become: true
+  vars_prompt:
+    - name: "user_name"
+      prompt: "Enter your full name"
+      private: no
+
+    - name: "user_email"
+      prompt: "Enter your email"
+      private: no
   pre_tasks:
     - name: Update Cache
       apt:
@@ -17,6 +25,7 @@
       tags:
         - install
     - include: tasks/zsh.yml
+    - include: tasks/vim.yml
     - include: tasks/neovim.yml
     - include: tasks/node.yml
     - include: tasks/npm-packages.yml
