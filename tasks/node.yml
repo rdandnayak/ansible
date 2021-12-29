@@ -1,15 +1,26 @@
-- name: Install Node
-  apt:
-    name: ['nodejs', 'npm']
+
+# - name: Install Node
+#   become: true
+#   apt:
+#     name: ['nodejs', 'npm']
+#   tags:
+#     - node
+- name: Install node
+  shell: curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
   tags:
     - node
-- name: Install n
-  npm:
-    name: n
-    global: true
-  tags:
-    - node
-- name: Install Node 14
-  shell: n 14
-  tags:
-    - node
+
+
+# - name: Chnage n prefix
+#   shell: export N_PREFIX=$HOME/.n
+
+# - name: Install n
+#   npm:
+#     name: n
+#     global: true
+#   tags:
+#     - node
+# - name: Install Node 14
+#   shell: n 14
+#   tags:
+#     - node
