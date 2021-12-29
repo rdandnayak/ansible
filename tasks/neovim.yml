@@ -4,12 +4,12 @@
     - install
     - neovim
 - name: Install neovim dependancy
-  shell: apt-get install -y libtool autoconf automake cmake libncurses5-dev g++
+  shell: sudo apt-get install -y libtool autoconf automake cmake libncurses5-dev g++
   tags:
     - install
     - neovim
 - name: Install neovim
-  shell: add-apt-repository ppa:neovim-ppa/unstable && apt-get install  -y neovim
+  shell: sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt-get install  -y neovim
   tags:
     - install
     - neovim

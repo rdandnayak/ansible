@@ -33,14 +33,14 @@
     - stow
 
 - name: Write Git Config information username
-  shell: sed -i -e "s/{ user_name }/{{ user_name }}/g" ~/.dotfiles/git/.gitconfig
+  shell: sed -i -e "s/{ user_name }/{{ user_name }}/g" {{ lookup('env', 'HOME') }}/.dotfiles/git/.gitconfig
   tags:
     - install
     - dotfiles
     - stow
 
 - name: Write Git Config information email
-  shell: sed -i -e "s/{ user_email }/{{ user_email }}/g" ~/.dotfiles/git/.gitconfig
+  shell: sed -i -e "s/{ user_email }/{{ user_email }}/g" {{ lookup('env', 'HOME') }}/.dotfiles/git/.gitconfig
   tags:
     - install
     - dotfiles

@@ -1,5 +1,4 @@
 - hosts: localhost
-  become: true
   vars_prompt:
     - name: "user_name"
       prompt: "Enter your full name"
@@ -10,6 +9,7 @@
       private: no
   pre_tasks:
     - name: Update Cache
+      become: true
       apt:
         update_cache: true
       tags:

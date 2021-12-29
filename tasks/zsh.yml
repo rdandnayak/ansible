@@ -11,7 +11,7 @@
   tags:
     - zsh
 - name: Change shell to zsh
-  shell: chsh -s `which zsh`
+  shell: sudo chsh -s `which zsh`
   tags:
     - zsh
 - name: Check if ohMyZsh exists
