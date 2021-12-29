@@ -22,4 +22,4 @@ WORKDIR /home/rdnayak
 FROM prime
 COPY . .
 # RUN ansible-playbook ansible.yml
-CMD ["sh", "-c", "ansible-playbook ansible.yml"]
+CMD ["sh", "-c", "ansible-playbook $TAGS ansible.yml"]

@@ -10,6 +10,11 @@
   tags:
     - node
 
+- name: Install node
+  shell: sudo apt install -y nodejs
+  tags:
+    - node
+
 
 # - name: Chnage n prefix
 #   shell: export N_PREFIX=$HOME/.n
