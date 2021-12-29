@@ -23,9 +23,15 @@ if you are on Linux terminal or WSL
 you can simply clone this repository and run
 
 ```
-./ansible-run
+./ansible-install
 ```
-which will take care of installing ansible on your machine, and setting up your machine with required packages as mentioned above
+
+which will take care of installing ansible on your machine,
+```
+ansible-playbook local.yml --ask-become-pass
+```
+above package will help you setting up your machine with required packages as mentioned above
+above command will ask your user password once during installation
 
 ## setup and installation with docker
 
@@ -49,4 +55,4 @@ run command below to run ansible inside your docker interactive terminal
 ansible-playbook local.yml
 ```
 
-which will run all necessary packages in mentioned list above
+which will run all necessary packages in mentioned list above, inside container
