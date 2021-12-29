@@ -3,10 +3,12 @@
     - name: "user_name"
       prompt: "Enter your full name"
       private: no
+      default: "Rohit Dandnayak"
 
     - name: "user_email"
       prompt: "Enter your email"
       private: no
+      default: "rohit.dandnayak@soroco.com"
   pre_tasks:
     - name: Update Cache
       become: true
