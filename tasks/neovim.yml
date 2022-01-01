@@ -8,11 +8,22 @@
   tags:
     - install
     - neovim
+    - ubuntu
 - name: Install neovim
   shell: sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt-get install  -y neovim
   tags:
     - install
     - neovim
+    - ubuntu
+- name: Install neovim
+  community.general.homebrew:
+    name: neovim
+    state: present
+  tags:
+    - install
+    - neovim
+    - macos
+
 # - name: Clone Neovim
 #   ansible.builtin.git:
 #     repo: 'https://github.com/neovim/neovim.git'

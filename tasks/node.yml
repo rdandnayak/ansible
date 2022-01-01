@@ -9,12 +9,19 @@
   shell: curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
   tags:
     - node
+    - ubuntu
 
 - name: Install node
   shell: sudo apt install -y nodejs
   tags:
     - node
+    - ubuntu
 
+- name: Install node
+  shell: brew install node@14
+  tags:
+    - node
+    - macos
 
 # - name: Chnage n prefix
 #   shell: export N_PREFIX=$HOME/.n

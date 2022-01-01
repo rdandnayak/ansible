@@ -17,6 +17,16 @@
   apt: name=stow
   tags:
     - install
+    - ubuntu
+    - dotfiles
+    - stow
+- name: Installing stow
+  community.general.homebrew:
+    name: stow
+    state: present
+  tags:
+    - install
+    - macos
     - dotfiles
     - stow
 - name: Cloning .dotfiles

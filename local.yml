@@ -10,6 +10,11 @@
       private: no
       default: "rohit.dandnayak@soroco.com"
   pre_tasks:
+    - name: Update homebrew
+      community.general.homebrew:
+        update_homebrew: yes
+      tags:
+        - macos
     - name: Update Cache
       become: true
       apt:
@@ -19,15 +24,24 @@
       tags:
         - node
         - zsh
+        - ubuntu
         - install
         - dotfiles
         - stow
   tasks:
     - name: Install core packages
+      community.general.homebrew:
+        name: tmux
+        state: present
+      tags:
+        - install
+        - macos
+    - name: Install core packages
       apt:
         name: ["tmux", "stow", "cmake"]
       tags:
         - install
+        - ubuntu
     - include: tasks/zsh.yml
     - include: tasks/vim.yml
     - include: tasks/neovim.yml

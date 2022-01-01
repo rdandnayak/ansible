@@ -2,16 +2,41 @@
   apt: name=curl
   tags:
     - zsh
+    - ubuntu
 - name: Install git
   apt: name=git
   tags:
     - zsh
+    - ubuntu
 - name: Install zsh
   apt: name=zsh
   tags:
     - zsh
+    - ubuntu
+- name: Install curl
+  community.general.homebrew:
+    name: curl
+    state: present
+  tags:
+    - zsh
+    - macos
+- name: Install git
+  community.general.homebrew:
+    name: git
+    state: present
+  tags:
+    - zsh
+    - macos
+- name: Install zsh
+  community.general.homebrew:
+    name: zsh
+    state: present
+  tags:
+    - zsh
+    - macos
 - name: Change shell to zsh
-  shell: sudo chsh -s `which zsh`
+  become: yes
+  shell: chsh -s `which zsh`
   tags:
     - zsh
 - name: Check if ohMyZsh exists
