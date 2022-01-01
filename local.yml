@@ -31,7 +31,7 @@
   tasks:
     - name: Install core packages
       community.general.homebrew:
-        name: tmux
+        name: ["tmux", "fzf"]
         state: present
       tags:
         - install
