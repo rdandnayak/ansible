@@ -37,6 +37,7 @@
         - install
         - macos
     - name: Install core packages
+      become: yes
       apt:
         name: ["tmux", "stow", "cmake"]
       tags:
