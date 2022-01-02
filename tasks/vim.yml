@@ -4,10 +4,11 @@
     - install
     - vim
     - ubuntu
-- name: Install neovim
+- name: Install vim
   community.general.homebrew:
     name: vim
     state: present
   tags:
     - install
+    - macos
     - neovim
