@@ -11,7 +11,7 @@ else
 fi
 
 ## pull ansible
-# sudo ansible-pull -U https://github.com/rdandnayak/ansible.git --ask-become-pass
+# ansible-pull -U https://github.com/rdandnayak/ansible.git --ask-become-pass
 if [[ $OSTYPE == 'darwin'* ]]; then
 	ansible-playbook local.yml --skip-tags ubuntu --ask-become-pass
 else

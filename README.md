@@ -26,7 +26,12 @@ you can clone this repository and run
 ./install
 ```
 
-which will take care of setting up your mentioned as mentioned above
+alternatively you can run below command to complete installation without pulling above repo
+```
+ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags <ubuntu|macos> --ask-become-pass
+```
+
+which will take care of setting up your mentioned with tools mentioned above
 
 
 Note:
