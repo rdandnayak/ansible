@@ -1,4 +1,4 @@
-# Ansible for Web Development
+# Ansible for Web Development [![Ansible workflow](https://github.com/rdandnayak/ansible/actions/workflows/manual.yml/badge.svg)](https://github.com/rdandnayak/ansible/actions/workflows/manual.yml)
 
 This is Ansible repository which can be used to bring your machine up-to-speed by installing all necessary tools required to develop Web applications
 
