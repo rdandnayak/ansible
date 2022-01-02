@@ -17,7 +17,7 @@ This will install following tools on your machine
 4. vim & neovim code editor
 5. necessary dotfiles required and mentioned in repo [link to .dotfiles repository](https://github.com/rdandnayak/.dotfiles)
 
-## setup & installation for WSL or Ubuntu
+## Setup & installation for WSL or Ubuntu
 
 if you are on Linux, WSL or MacOS terminal you can run command below
 
