@@ -6,7 +6,7 @@ This is Ansible repository which can be used to bring your machine up-to-speed b
 
 This will install following tools on your machine
 
-1. zsh terminal with custom configuration
+1. zsh terminal with custom configuration.
 2. various npm packages
    1. yarn
    2. eslint
@@ -31,7 +31,7 @@ alternatively you can clone current repo and run
 ./install
 ```
 
-which will take care of setting up your machine mentioned with tools mentioned above alongwith dotfiles from this repo here -> [dotfiles repo](https://github.com/rdandnayak/.dotfiles)
+which will take care of setting up your machine mentioned with tools mentioned above.
 
 Note:
 this command will ask you for sudo password to do necessary insallations once
