@@ -17,9 +17,9 @@ This will install following tools on your machine
 4. vim & neovim code editor
 5. necessary dotfiles required and mentioned in repo [link to .dotfiles repository](https://github.com/rdandnayak/.dotfiles)
 
-## Setup & installation for WSL or Ubuntu
+## Setup & installation for WSL(Windows), Ubuntu or MacOs terminal
 
-if you are on Linux, WSL or MacOS terminal you can run command below
+if you are on WSL, Ubuntu or MacOS terminal you can run command below
 
 ```
 ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags <ubuntu|macos> --ask-become-pass
