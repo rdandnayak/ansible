@@ -9,6 +9,7 @@
     - zsh
     - ubuntu
 - name: Install zsh
+  become: yes
   apt: name=zsh
   tags:
     - zsh
