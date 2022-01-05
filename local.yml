@@ -1,4 +1,7 @@
 - hosts: localhost
+  vars:
+    # source_key: "./.ssh/id_rsa"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
   vars_prompt:
     - name: "user_name"
       prompt: "Enter your full name"
@@ -44,6 +47,7 @@
         - install
         - ubuntu
     - include: tasks/zsh.yml
+    - include: tasks/ssh.yml
     - include: tasks/vim.yml
     - include: tasks/neovim.yml
     - include: tasks/node.yml

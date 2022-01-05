@@ -1,0 +1,7 @@
+- name: Install generate ssh key
+  ansible.builtin.shell:
+    cmd: ssh-keygen -q -t rsa -N '' <<< $'\ny' >/dev/null 2>&1
+    # creates: "{{ dest_key }}"
+  tags:
+    - install
+    - ssh
