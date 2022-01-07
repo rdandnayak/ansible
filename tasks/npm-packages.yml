@@ -19,6 +19,30 @@
   tags:
     - install
     - node
+- name: Install angular cli
+  npm:
+    name: "@angular/cli@9"
+    global: yes
+  tags:
+    - install
+    - node
+# commenting for now since this has some weird error for permissions https://github.com/microsoft/WSL/issues/14
+# - name: Install npx
+#   become: yes
+#   npm:
+#     name: npx
+#     global: yes
+#   tags:
+#     - install
+#     - node
+
+- name: Conventional Changelog
+  npm:
+    name: conventional-changelog-cli
+    global: yes
+  tags:
+    - install
+    - node
 - name: Install Typescript
   npm:
     name: typescript

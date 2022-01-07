@@ -1,4 +1,11 @@
-
+- name: Npm global file exists?
+  stat:
+    path: $HOME/.npm-global
+  register: npm_global_exists
+  tags:
+    - install
+    - node
+    - ubuntu
 # - name: Install Node
 #   become: true
 #   apt:
@@ -6,13 +13,16 @@
 #   tags:
 #     - node
 - name: Install node
-  shell: curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+  become: yes
+  shell: curl -sL https://deb.nodesource.com/setup_14.x | bash -
   tags:
     - node
     - ubuntu
 
+
 - name: Install node
-  shell: sudo apt install -y nodejs
+  become: yes
+  shell: apt install -y nodejs
   tags:
     - node
     - ubuntu
@@ -22,6 +32,19 @@
   tags:
     - node
     - macos
+
+- name: Create global home directory
+  shell: mkdir $HOME/.npm-global
+  when: not npm_global_exists.stat.exists
+  tags:
+    - node
+    - ubuntu
+
+- name: Set global config prefix
+  shell: npm config set prefix $HOME/.npm-global
+  tags:
+    - node
+    - ubuntu
 
 # - name: Chnage n prefix
 #   shell: export N_PREFIX=$HOME/.n

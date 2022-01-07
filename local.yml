@@ -19,7 +19,7 @@
       tags:
         - macos
     - name: Update Cache
-      become: true
+      become: yes
       apt:
         force_apt_get: true
         update_cache: true
@@ -47,9 +47,9 @@
         - install
         - ubuntu
     - include: tasks/zsh.yml
-    - include: tasks/ssh.yml
-    - include: tasks/vim.yml
-    - include: tasks/neovim.yml
+    - include: tasks/dotfiles.yml
     - include: tasks/node.yml
     - include: tasks/npm-packages.yml
-    - include: tasks/dotfiles.yml
+    # - include: tasks/ssh.yml
+    - include: tasks/vim.yml
+    - include: tasks/neovim.yml
