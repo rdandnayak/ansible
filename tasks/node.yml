@@ -1,6 +1,6 @@
 - name: Npm global file exists?
   stat:
-    path: $HOME/.npm-global
+    path: $NPM_CONFIG_PREFIX
   register: npm_global_exists
   tags:
     - install
@@ -34,14 +34,14 @@
     - macos
 
 - name: Create global home directory
-  shell: mkdir $HOME/.npm-global
+  shell: mkdir $NPM_CONFIG_PREFIX
   when: not npm_global_exists.stat.exists
   tags:
     - node
     - ubuntu
 
 - name: Set global config prefix
-  shell: npm config set prefix $HOME/.npm-global
+  shell: npm config set prefix $NPM_CONFIG_PREFIX
   tags:
     - node
     - ubuntu
