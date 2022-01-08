@@ -1,61 +1,63 @@
-- name: Npm global file exists?
+# - name: Npm global file exists?
+#   stat:
+#     path: $NPM_CONFIG_PREFIX
+#   register: npm_global_exists
+#   tags:
+#     - install
+#     - node
+- name: N global folder
   stat:
-    path: $NPM_CONFIG_PREFIX
-  register: npm_global_exists
+    path: $N_PREFIX
+  register: n_global
   tags:
     - install
     - node
-    - ubuntu
 # - name: Install Node
 #   become: true
 #   apt:
 #     name: ['nodejs', 'npm']
 #   tags:
 #     - node
-- name: Install node
-  become: yes
-  shell: curl -sL https://deb.nodesource.com/setup_14.x | bash -
-  tags:
-    - node
-    - ubuntu
+# - name: Install node
+#   become: yes
+#   shell: curl -sL https://deb.nodesource.com/setup_14.x | bash -
+#   tags:
+#     - node
+#     - ubuntu
 
 
-- name: Install node
-  become: yes
-  shell: apt install -y nodejs
-  tags:
-    - node
-    - ubuntu
+# - name: Install node
+#   become: yes
+#   shell: apt install -y nodejs
+#   tags:
+#     - node
+#     - ubuntu
 
-- name: Install node
-  shell: brew install node@14
+# - name: Install node
+#   shell: brew install node@14
+#   tags:
+#     - node
+#     - macos
+
+
+- name: Install n
+  shell: curl -L https://git.io/n-install | bash -s -- -y 14.18.2
+  when: not n_global.stat.exists
   tags:
     - node
-    - macos
 
 - name: Create global home directory
-  shell: mkdir $NPM_CONFIG_PREFIX
-  when: not npm_global_exists.stat.exists
+  shell: mkdir -p $NPM_CONFIG_PREFIX
   tags:
     - node
-    - ubuntu
 
 - name: Set global config prefix
   shell: npm config set prefix $NPM_CONFIG_PREFIX
   tags:
     - node
-    - ubuntu
 
 # - name: Chnage n prefix
-#   shell: export N_PREFIX=$HOME/.n
-
-# - name: Install n
-#   npm:
-#     name: n
-#     global: true
-#   tags:
-#     - node
-# - name: Install Node 14
-#   shell: n 14
+#   shell: mkdir -p $N_PREFIX
+#   when: not n_global_exists.stat.exists
 #   tags:
 #     - node

@@ -77,8 +77,7 @@
   when: not zsh_syntax.stat.exists
   tags:
     - zsh
-- name: Install ohmyzsh
+- name: Source zshrc file
   shell: source $HOME/.zshrc
-  when: not oh_my_zsh_exists.stat.exists
   tags:
     - zsh
