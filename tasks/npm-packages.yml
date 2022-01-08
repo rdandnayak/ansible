@@ -26,15 +26,16 @@
   tags:
     - install
     - node
-# commenting for now since this has some weird error for permissions https://github.com/microsoft/WSL/issues/14
-- name: Install npx
-  become: yes
-  npm:
-    name: npx
-    global: yes
-  tags:
-    - install
-    - node
+      # FIXME: commenting for now since this has some weird error for permissions https://github.com/microsoft/WSL/issues/14
+      # FIXME: similar prblem exists for mac as well
+# - name: Install npx
+#   become: yes
+#   npm:
+#     name: npx
+#     global: yes
+#   tags:
+#     - install
+#     - node
 
 - name: Conventional Changelog
   npm:
