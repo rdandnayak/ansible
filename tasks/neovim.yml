@@ -1,21 +1,21 @@
-- name: Remove neovim
-  shell: rm -rf ~/neovim
-  tags:
-    - install
-    - neovim
+# - name: Remove neovim
+#   shell: rm -rf ~/neovim
+#   tags:
+#     - install
+#     - neovim
 - name: Install neovim dependancy
   become: yes
-  shell: apt-get install -y libtool autoconf automake cmake libncurses5-dev g++
+  shell: apt-get install -y libtool autoconf automake cmake libncurses5-dev g++ pkg-config
   tags:
     - install
     - neovim
     - ubuntu
-# - name: Install neovim
-#   shell: sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt-get install  -y neovim
-#   tags:
-#     - install
-#     - neovim
-#     - ubuntu
+- name: Install neovim
+  shell: sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt-get install  -y neovim
+  tags:
+    - install
+    - neovim
+    - ubuntu
 - name: Install neovim
   community.general.homebrew:
     name: cmake
@@ -27,24 +27,25 @@
 
 
 
-- name: Clone Neovim
-  ansible.builtin.git:
-    repo: 'https://github.com/neovim/neovim.git'
-    dest: "{{ lookup('env', 'HOME') }}/neovim"
-  tags:
-    - install
-    - neovim
-- name: Build neovim
-  shell: "cd {{ lookup('env', 'HOME') }}/neovim && make -j 20"
-  tags:
-    - install
-    - neovim
-- name: Install neovim
-  become: true
-  shell: "cd {{ lookup('env', 'HOME') }}/neovim && make install"
-  tags:
-    - install
-    - neovim
+# FIXME: this setup does not work on wsl so resorting back to using via apt manager
+# - name: Clone Neovim
+#   ansible.builtin.git:
+#     repo: 'https://github.com/neovim/neovim.git'
+#     dest: "{{ lookup('env', 'HOME') }}/neovim"
+#   tags:
+#     - install
+#     - neovim
+# - name: Build neovim
+#   shell: "cd {{ lookup('env', 'HOME') }}/neovim && make -j 20"
+#   tags:
+#     - install
+#     - neovim
+# - name: Install neovim
+#   become: true
+#   shell: "cd {{ lookup('env', 'HOME') }}/neovim && make install"
+#   tags:
+#     - install
+#     - neovim
 
 # - name: Clone Neovim
 #   ansible.builtin.git:

@@ -49,6 +49,8 @@
 
 - name: Source zshrc file
   shell: source $HOME/.zshrc
+  args:
+    executable: /bin/bash
   tags:
     - zsh
 
