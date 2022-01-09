@@ -47,12 +47,12 @@
     - node
 
 
-- name: Source zshrc file
-  shell: source $HOME/.zshrc
-  args:
-    executable: /bin/bash
-  tags:
-    - zsh
+# - name: Source zshrc file
+#   shell: source $HOME/.zshrc
+#   args:
+#     executable: /bin/bash
+#   tags:
+#     - zsh
 
 - name: Create global home directory
   shell: mkdir -p $NPM_CONFIG_PREFIX

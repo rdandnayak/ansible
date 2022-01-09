@@ -77,9 +77,9 @@
   when: not zsh_syntax.stat.exists
   tags:
     - zsh
-- name: Source zshrc file
-  shell: source ~/.zshrc
-  args:
-    executable: /bin/bash
-  tags:
-    - zsh
+# - name: Source zshrc file
+#   shell: source ~/.zshrc
+#   args:
+#     executable: /bin/bash
+#   tags:
+#     - zsh
