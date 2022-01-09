@@ -7,7 +7,7 @@
 #     - node
 - name: N global folder
   stat:
-    path: $N_PREFIX
+    path: $HOME/.n
   register: n_global
   tags:
     - install
@@ -45,6 +45,12 @@
   when: not n_global.stat.exists
   tags:
     - node
+
+
+- name: Source zshrc file
+  shell: source $HOME/.zshrc
+  tags:
+    - zsh
 
 - name: Create global home directory
   shell: mkdir -p $NPM_CONFIG_PREFIX

@@ -4,25 +4,47 @@
     - install
     - neovim
 - name: Install neovim dependancy
-  shell: sudo apt-get install -y libtool autoconf automake cmake libncurses5-dev g++
+  become: yes
+  shell: apt-get install -y libtool autoconf automake cmake libncurses5-dev g++
   tags:
     - install
     - neovim
     - ubuntu
-- name: Install neovim
-  shell: sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt-get install  -y neovim
-  tags:
-    - install
-    - neovim
-    - ubuntu
+# - name: Install neovim
+#   shell: sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt-get install  -y neovim
+#   tags:
+#     - install
+#     - neovim
+#     - ubuntu
 - name: Install neovim
   community.general.homebrew:
-    name: neovim
+    name: cmake
     state: present
   tags:
     - install
     - neovim
     - macos
+
+
+
+- name: Clone Neovim
+  ansible.builtin.git:
+    repo: 'https://github.com/neovim/neovim.git'
+    dest: "{{ lookup('env', 'HOME') }}/neovim"
+  tags:
+    - install
+    - neovim
+- name: Build neovim
+  shell: "cd {{ lookup('env', 'HOME') }}/neovim && make -j 20"
+  tags:
+    - install
+    - neovim
+- name: Install neovim
+  become: true
+  shell: "cd {{ lookup('env', 'HOME') }}/neovim && make install"
+  tags:
+    - install
+    - neovim
 
 # - name: Clone Neovim
 #   ansible.builtin.git:
