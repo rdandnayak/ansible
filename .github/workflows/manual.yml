@@ -29,8 +29,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
     - name: Run ansible
       run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
 
@@ -42,6 +40,6 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Install brew and ansible
-      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew install ansible
+      run: brew install ansible
     - name: Run ansible
-      run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags
+      run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags ubuntu

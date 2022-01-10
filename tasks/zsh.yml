@@ -82,13 +82,13 @@
   shell: echo $PATH
   args:
     executable: /bin/zsh
-  register: path_output_before_zsh
+  register: PATH_print
   tags:
     - zsh
     - ubuntu
 
 
-- debug:
+- Path Output:
     var: path_output_before_zsh.stdout_lines
 
 - name: Source zshrc file
