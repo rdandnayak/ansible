@@ -35,7 +35,7 @@
     global: yes
     ignore_scripts: true
   args:
-    executable: $HOME/n/bin/npm
+    executable: $HOME/n/bin
   tags:
     - install
     - node
