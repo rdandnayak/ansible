@@ -24,11 +24,13 @@ jobs:
   # This workflow contains a single job called "greet"
   ubuntu:
     # The type of runner that the job will run on
-    runs-on: ubuntu:focal
+    runs-on: ubuntu-18.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
+    - name: Remove pre-installed node
+      run: apt-get remove nodejs && apt-get remove npm && rm -rf /usr/local/bin/node rm && rm -rf /usr/local/bin/npm
     - name: Run ansible
       run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
 

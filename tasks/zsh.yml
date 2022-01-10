@@ -78,8 +78,9 @@
   tags:
     - zsh
 
+
 - name: Path output before zsh
-  shell: which node  && node --version #echo $PATH
+  shell: echo $PATH
   args:
     executable: /bin/zsh
   register: path_output_before_zsh
