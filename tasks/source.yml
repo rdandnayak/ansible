@@ -1,7 +1,7 @@
 - name: Source zshrc file
   ansible.builtin.shell: source ~/.zshrc
   # shell: source ~/.zshrc
-  # args:
-  #   executable: /bin/zsh
+  args:
+    executable: /bin/zsh
   tags:
     - zsh
