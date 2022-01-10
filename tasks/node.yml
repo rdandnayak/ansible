@@ -67,6 +67,8 @@
     mode: '0755'
 
 
+- include: tasks/source.yml
+
 - name: Set global config prefix
   shell: source ~/.zshrc && npm config set prefix $NPM_CONFIG_PREFIX
   args:
