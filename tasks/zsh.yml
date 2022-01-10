@@ -88,7 +88,7 @@
     - ubuntu
 
 
-- Path Output:
+- debug:
     var: path_output_before_zsh.stdout_lines
 
 - name: Source zshrc file
