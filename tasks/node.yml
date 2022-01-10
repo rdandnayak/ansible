@@ -7,7 +7,7 @@
 #     - node
 - name: N global folder
   stat:
-    path: $HOME/.n
+    path: $HOME/n
   register: n_global
   tags:
     - install
@@ -46,6 +46,10 @@
   tags:
     - node
 
+# name: Install n
+#   shell: n 14.18.2
+#   tags:
+#     - node
 
 - name: Source zshrc file
   shell: source $HOME/.zshrc
