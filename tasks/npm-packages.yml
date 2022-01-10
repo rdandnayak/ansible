@@ -28,15 +28,17 @@
 #   tags:
 #     - install
 #     - node
-# - name: Install angular cli
-#   npm:
-#     name: "@angular/cli"
-#     global: yes
-#   args:
-#     executable: ~/n/bin/npm
-#   tags:
-#     - install
-#     - node
+#
+- name: Install angular cli
+  npm:
+    name: "@angular/cli"
+    global: yes
+    ignore_scripts: true
+  args:
+    executable: $HOME/n/bin/npm
+  tags:
+    - install
+    - node
 #       # FIXME: commenting for now since this has some weird error for permissions https://github.com/microsoft/WSL/issues/14
 #       # FIXME: similar prblem exists for mac as well
 # # - name: Install npx
