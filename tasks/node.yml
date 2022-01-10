@@ -71,6 +71,8 @@
 
 - name: Set global config prefix
   shell: npm config set prefix $NPM_CONFIG_PREFIX
+  args:
+    executable: /bin/zsh
   tags:
     - install
     - node
