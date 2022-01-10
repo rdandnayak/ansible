@@ -24,16 +24,23 @@ jobs:
   # This workflow contains a single job called "greet"
   wsl:
     # The type of runner that the job will run on
-    runs-on: windows-latest
 
+    runs-on: windows-2019
+    defaults:
+      run:
+        shell: wsl-bash {0}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - shell: wsl-bash_Ubuntu-20.04 {0}
+    - uses: Vampire/setup-wsl@v1
+      with:
+        distribution: Ubuntu-20.04
+        additional-packages:
+          ansible
+
+    - name: Remove pre-installed node
       run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
-    - name: Install ansible
-      run: apt-get install ansible
-    - shell: wsl-bash_Ubuntu-20.04 {0}
+    - name: Run ansible
       run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
 
   ubuntu:
