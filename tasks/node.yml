@@ -1,10 +1,10 @@
-# - name: Npm global file exists?
-#   stat:
-#     path: $NPM_CONFIG_PREFIX
-#   register: npm_global_exists
-#   tags:
-#     - install
-#     - node
+- name: Npm global file exists?
+  stat:
+    path: $NPM_CONFIG_PREFIX
+  register: npm_global_exists
+  tags:
+    - install
+    - node
 - name: N global folder
   stat:
     path: $HOME/n
@@ -44,6 +44,7 @@
   shell: curl -L https://git.io/n-install | bash -s -- -y 14.18.2
   when: not n_global.stat.exists
   tags:
+    - install
     - node
 
 # name: Install n
@@ -54,18 +55,22 @@
 # - name: Source zshrc file
 #   shell: source $HOME/.zshrc
 #   args:
-#     executable: /bin/bash
+#     executable: /bin/zsh
 #   tags:
-#     - zsh
+#     - install
+#     - node
+#
+- name: Create npm directory ~/.npm-global
+  ansible.builtin.file:
+    path: $NPM_CONFIG_PREFIX
+    state: directory
+    mode: '0755'
 
-- name: Create global home directory
-  shell: mkdir -p $NPM_CONFIG_PREFIX
-  tags:
-    - node
 
 - name: Set global config prefix
   shell: npm config set prefix $NPM_CONFIG_PREFIX
   tags:
+    - install
     - node
 
 # - name: Chnage n prefix
