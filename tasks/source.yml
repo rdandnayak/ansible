@@ -1,8 +1,6 @@
-
 - name: Source zshrc file
   shell: source ~/.zshrc
   args:
     executable: /bin/zsh
   tags:
     - zsh
-    - ubuntu
