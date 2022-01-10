@@ -17,17 +17,17 @@
     - neovim
     - ubuntu
 
-- name: Tap Homebrew repositories
-  homebrew_tap:
-    name: "neovim/neovim"
+# - name: Tap Homebrew repositories
+#   homebrew_tap:
+#     name: "neovim/neovim"
 
-- name: Install neovim
-  community.general.homebrew:
-    name: neovim
-  tags:
-    - install
-    - neovim
-    - macos
+# - name: Install neovim
+#   community.general.homebrew:
+#     name: neovim
+#   tags:
+#     - install
+#     - neovim
+#     - macos
 
 
 
@@ -69,9 +69,9 @@
 #   tags:
 #     - install
 #     - neovim
-- name: Install Vim-Plug
-  shell: curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  tags:
-    - install
-    - neovim
-    - vim
+# - name: Install Vim-Plug
+#   shell: curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#   tags:
+#     - install
+#     - neovim
+#     - vim
