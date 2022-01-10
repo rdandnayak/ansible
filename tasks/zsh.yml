@@ -79,10 +79,10 @@
     - zsh
 
 - name: Path output before zsh
-  shell: echo $PATH
+  shell: which node  && node --version #echo $PATH
   args:
     executable: /bin/zsh
-  register: PATH_print
+  register: path_output_before_zsh
   tags:
     - zsh
     - ubuntu
