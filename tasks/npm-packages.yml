@@ -1,60 +1,69 @@
-- name: Install Yarn
-  npm:
-    name: yarn
-    global: yes
+- name: Install global packages
+  become: false
+  become_user: "{{ lookup('env', 'USER') }}"
+  shell: source ~/.zshrc && npm i -g typescript eslint typescript-language-server conventional-changelog-cli ts-node npx
+  args:
+    executable: /bin/zsh
   tags:
     - install
     - node
-- name: Install eslint
-  npm:
-    name: eslint
-    global: yes
-  tags:
-    - install
-    - node
-- name: Install Typescript server
-  npm:
-    name: typescript-language-server
-    global: yes
-  tags:
-    - install
-    - node
-- name: Install angular cli
-  npm:
-    name: "@angular/cli@9"
-    global: yes
-  tags:
-    - install
-    - node
-      # FIXME: commenting for now since this has some weird error for permissions https://github.com/microsoft/WSL/issues/14
-      # FIXME: similar prblem exists for mac as well
-# - name: Install npx
-#   become: yes
+# - name: Install Yarn
 #   npm:
-#     name: npx
+#     name: yarn
 #     global: yes
 #   tags:
 #     - install
 #     - node
+# - name: Install eslint
+#   npm:
+#     name: eslint
+#     global: yes
+#   tags:
+#     - install
+#     - node
+# - name: Install Typescript server
+#   npm:
+#     name: typescript-language-server
+#     global: yes
+#   tags:
+#     - install
+#     - node
+# - name: Install angular cli
+#   npm:
+#     name: "@angular/cli@9"
+#     global: yes
+#   tags:
+#     - install
+#     - node
+#       # FIXME: commenting for now since this has some weird error for permissions https://github.com/microsoft/WSL/issues/14
+#       # FIXME: similar prblem exists for mac as well
+# # - name: Install npx
+# #   become: yes
+# #   npm:
+# #     name: npx
+# #     global: yes
+# #   tags:
+# #     - install
+# #     - node
 
-- name: Conventional Changelog
-  npm:
-    name: conventional-changelog-cli
-    global: yes
-  tags:
-    - install
-    - node
-- name: Install Typescript
-  npm:
-    name: typescript
-    global: yes
-  tags:
-    - install
-    - node
-- name: Install TS-Node
-  npm:
-    name: ts-node
-    global: yes
-  tags:
-    - install
-    - node
+# - name: Conventional Changelog
+#   npm:
+#     name: conventional-changelog-cli
+#     global: yes
+#   tags:
+#     - install
+#     - node
+# - name: Install Typescript
+#   npm:
+#     name: typescript
+#     global: yes
+#   tags:
+#     - install
+#     - node
+# - name: Install TS-Node
+#   npm:
+#     name: ts-node
+#     global: yes
+#   tags:
+#     - install
+#     - node
