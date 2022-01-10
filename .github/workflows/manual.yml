@@ -41,7 +41,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Install brew and ansible
+    - name: Install ansible
       run: brew install ansible
+    - name: Remove pre-installed node
+      run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
     - name: Run ansible
       run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags ubuntu
