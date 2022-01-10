@@ -30,7 +30,7 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Remove pre-installed node
-      run: apt-get remove nodejs && apt-get remove npm && rm -rf /usr/local/bin/node rm && rm -rf /usr/local/bin/npm
+      run: sudo apt-get remove nodejs && sudo apt-get remove npm && rm -rf /usr/local/bin/node rm && rm -rf /usr/local/bin/npm
     - name: Run ansible
       run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
 
