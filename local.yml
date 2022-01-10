@@ -13,11 +13,11 @@
       private: no
       default: "rohit.dandnayak@soroco.com"
   pre_tasks:
-    # - name: Update homebrew
-    #   community.general.homebrew:
-    #     update_homebrew: yes
-    #   tags:
-    #     - macos
+    - name: Update homebrew
+      community.general.homebrew:
+        update_homebrew: yes
+      tags:
+        - macos
     - name: Update Cache
       become: yes
       apt:

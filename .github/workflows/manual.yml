@@ -35,11 +35,13 @@ jobs:
     - uses: Vampire/setup-wsl@v1
       with:
         distribution: Ubuntu-20.04
-        additional-packages:
-          ansible
+        # additional-packages:
+        #   ansible
 
     - name: Remove pre-installed node
       run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
+    - name: Install ansible
+      run: apt-get install ansible
     - name: Run ansible
       run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
 
