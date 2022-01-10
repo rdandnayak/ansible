@@ -16,10 +16,10 @@
     - install
     - neovim
     - ubuntu
+
 - name: Install neovim
   community.general.homebrew:
     name: neovim
-    state: present
   tags:
     - install
     - neovim
