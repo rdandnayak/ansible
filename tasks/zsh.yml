@@ -81,7 +81,7 @@
 - name: Source zshrc file
   shell: source ~/.zshrc
   args:
-    executable: /bin/bash
+    executable: /bin/zsh
   tags:
     - zsh
     - ubuntu
@@ -89,7 +89,7 @@
 - name: Source zshrc file
   shell: source ~/.zshrc
   args:
-    executable: /bin/bash
+    executable: /bin/zsh
   tags:
     - zsh
     - macos
