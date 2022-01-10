@@ -22,7 +22,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
-  greet:
+  ubuntu:
     # The type of runner that the job will run on
     runs-on: ubuntu-18.04
 
@@ -33,3 +33,15 @@ jobs:
       run: echo "Hello ${{ github.event.inputs.name }}"
     - name: Run ansible
       run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
+
+  ubuntu:
+    # The type of runner that the job will run on
+    runs-on: macos-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Send greeting
+      run: echo "Hello ${{ github.event.inputs.name }}"
+    - name: Run ansible
+      run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags
