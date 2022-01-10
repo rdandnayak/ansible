@@ -7,15 +7,15 @@
   tags:
     - install
     - node
-- name: Install Yarn
-  args:
-    executable: $HOME/n/bin/npm
-  npm:
-    name: yarn
-    global: yes
-  tags:
-    - install
-    - node
+# - name: Install Yarn
+#   args:
+#     executable: $HOME/n/bin/npm
+#   npm:
+#     name: yarn
+#     global: yes
+#   tags:
+#     - install
+#     - node
 # - name: Install eslint
 #   npm:
 #     name: eslint
