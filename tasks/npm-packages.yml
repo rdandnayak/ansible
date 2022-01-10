@@ -1,4 +1,4 @@
-- name: Install global packages
+- name: Install global node packages
   become: false
   become_user: "{{ lookup('env', 'USER') }}"
   shell: source ~/.zshrc && npm i -g typescript eslint typescript-language-server conventional-changelog-cli ts-node npx
@@ -30,8 +30,10 @@
 #     - node
 # - name: Install angular cli
 #   npm:
-#     name: "@angular/cli@9"
+#     name: "@angular/cli"
 #     global: yes
+#   args:
+#     executable: ~/n/bin/npm
 #   tags:
 #     - install
 #     - node
