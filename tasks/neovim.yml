@@ -17,13 +17,13 @@
     - neovim
     - ubuntu
 
-- name: Install neovim
-  community.general.homebrew:
-    name: neovim
-  tags:
-    - install
-    - neovim
-    - macos
+# - name: Install neovim
+#   community.general.homebrew:
+#     name: neovim
+#   tags:
+#     - install
+#     - neovim
+#     - macos
 
 
 
