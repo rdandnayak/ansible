@@ -18,7 +18,7 @@
     - ubuntu
 - name: Install neovim
   community.general.homebrew:
-    name: cmake
+    name: neovim
     state: present
   tags:
     - install
