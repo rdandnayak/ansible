@@ -53,3 +53,4 @@
     # - include: tasks/ssh.yml
     - include: tasks/vim.yml
     - include: tasks/neovim.yml
+    - include: tasks/source.yml
