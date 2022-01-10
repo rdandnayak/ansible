@@ -35,6 +35,7 @@ jobs:
       run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
 
   macos:
+    needs: ubuntu
     # The type of runner that the job will run on
     runs-on: macos-latest
 
