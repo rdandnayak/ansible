@@ -41,7 +41,7 @@ jobs:
     - name: Setup path
       run: echo 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games' >> ~/.bashrc
     - name: Remove pre-installed node
-      run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
+      run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm
     - name: Install ansible repo
       run: apt-add-repository -y ppa:ansible/ansible
     - name: Fix path variable
