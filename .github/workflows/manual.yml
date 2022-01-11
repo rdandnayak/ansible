@@ -78,8 +78,8 @@ jobs:
 
     # - name: Install PiP
     #   run: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py --user
-    - name: Install PiP
-      run: sudo python -m pip install ansible
+    - name: Install brew
+      run: brew update && brew upgrade && brew install ansible && brew upgrade ansible
     - name: Remove pre-installed node
       run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
     - name: Run ansible
