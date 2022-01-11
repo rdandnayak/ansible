@@ -40,6 +40,12 @@
 #     - macos
 
 
+- name: Clean WSL path
+  shell: export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+  when: not n_global.stat.exists
+  tags:
+    - wsl
+
 - name: Install n
   shell: curl -L https://git.io/n-install | bash -s -- -y 14.18.2
   when: not n_global.stat.exists

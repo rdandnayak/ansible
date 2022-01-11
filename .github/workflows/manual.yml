@@ -60,7 +60,7 @@ jobs:
     - name: Remove pre-installed node
       run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
     - name: Run ansible
-      run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
+      run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos,wsl
 
   macos:
     # needs: ubuntu
@@ -79,4 +79,4 @@ jobs:
     - name: Remove pre-installed node
       run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
     - name: Run ansible
-      run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags ubuntu
+      run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags ubuntu,wsl
