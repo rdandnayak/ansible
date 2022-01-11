@@ -38,6 +38,8 @@ jobs:
         # additional-packages:
         #   ansible
 
+    - name: Setup path
+      run: echo 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games' >> ~/.bashrc
     - name: Remove pre-installed node
       run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
     - name: Install ansible repo
@@ -74,8 +76,10 @@ jobs:
       with:
         xcode-version: latest-stable
 
-    - name: Install ansible
-      run: sudo easy_install pip && sudo pip install ansible --quiet
+    - name: Install PiP
+      run: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py --user
+    - name: Install PiP
+      run: python -m pip install --user ansible
     - name: Remove pre-installed node
       run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
     - name: Run ansible
