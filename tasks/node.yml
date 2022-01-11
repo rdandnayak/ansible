@@ -41,14 +41,18 @@
 
 
 - name: Clean WSL path
-  shell: export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+  shell: export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games && source ~/.zshrc
   when: not n_global.stat.exists
+  args:
+    executable: /bin/zsh
   tags:
     - wsl
 
 - name: Install n
-  shell: curl -L https://git.io/n-install | bash -s -- -y 14.18.2
+  shell: source ~/.zshrc && curl -L https://git.io/n-install | bash -s -- -y 14.18.2
   when: not n_global.stat.exists
+  args:
+    executable: /bin/zsh
   tags:
     - install
     - node
