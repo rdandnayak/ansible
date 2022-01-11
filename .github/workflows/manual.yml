@@ -75,7 +75,7 @@ jobs:
         xcode-version: latest-stable
 
     - name: Install ansible
-      run: brew install ansible
+      run: sudo easy_install pip && sudo pip install ansible --quiet
     - name: Remove pre-installed node
       run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
     - name: Run ansible
