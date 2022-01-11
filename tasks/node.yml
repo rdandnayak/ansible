@@ -78,9 +78,9 @@
 - include: tasks/source.yml
 
 - name: Set global config prefix
-  shell: source ~/.zshrc && npm config set prefix $NPM_CONFIG_PREFIX
+  shell: npm config set prefix $NPM_CONFIG_PREFIX
   args:
-    executable: /bin/zsh
+    executable: ~/n/bin/npm
   tags:
     - install
     - node
