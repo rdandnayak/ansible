@@ -78,8 +78,6 @@
 - include: tasks/source.yml
 
 - name: Set global config prefix
-  become: false
-  become_user: "{{ lookup('env', 'USER') }}"
   shell: source ~/.zshrc && npm config set prefix $NPM_CONFIG_PREFIX
   args:
     executable: /bin/zsh

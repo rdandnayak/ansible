@@ -1,6 +1,4 @@
 - name: Install global node packages
-  become: false
-  become_user: "{{ lookup('env', 'USER') }}"
   shell: source ~/.zshrc && npm i -g typescript eslint typescript-language-server conventional-changelog-cli ts-node
   args:
     executable: /bin/zsh
