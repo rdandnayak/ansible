@@ -19,7 +19,7 @@ This will install following tools on your machine
 
 ## Setup & installation for WSL(Windows), Ubuntu or MacOs terminal
 
-if you are on WSL, Ubuntu or MacOS terminal you can run command below
+if you are on WSL, Ubuntu or MacOS terminal you can run command below. (You will need to have ansible installed on your machine)
 
 ```
 ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags <ubuntu|macos> --ask-become-pass
