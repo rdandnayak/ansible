@@ -20,30 +20,29 @@ on:
         required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "greet"
-  # wsl:
-  #   # The type of runner that the job will run on
 
-  #   runs-on: windows-2019
-  #   defaults:
-  #     run:
-  #       shell: wsl-bash {0}
-  #   # Steps represent a sequence of tasks that will be executed as part of the job
-  #   steps:
-  #   # Runs a single command using the runners shell
-  #   - uses: Vampire/setup-wsl@v1
-  #     with:
-  #       distribution: Ubuntu-20.04
-  #       # additional-packages:
-  #       #   ansible
+  wsl:
+    # The type of runner that the job will run on
 
-  #   - name: Remove pre-installed node
-  #     run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
-  #   - name: Install ansible
-  #     run: apt-get install ansible
-  #   - name: Run ansible
-  #     run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
+    runs-on: windows-2019
+    defaults:
+      run:
+        shell: wsl-bash {0}
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - uses: Vampire/setup-wsl@v1
+      with:
+        distribution: Ubuntu-20.04
+        # additional-packages:
+        #   ansible
+
+    - name: Remove pre-installed node
+      run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
+    - name: Install ansible
+      run: apt-get install ansible
+    - name: Run ansible
+      run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
 
   ubuntu:
     # needs: wsl
@@ -58,21 +57,21 @@ jobs:
     - name: Run ansible
       run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
 
-  # macos:
-  #   needs: ubuntu
-  #   # The type of runner that the job will run on
-  #   runs-on: macos-latest
+  macos:
+    needs: ubuntu
+    # The type of runner that the job will run on
+    runs-on: macos-latest
 
-  #   # Steps represent a sequence of tasks that will be executed as part of the job
-  #   steps:
-  #   # Runs a single command using the runners shell
-  #   - uses: maxim-lobanov/setup-xcode@v1
-  #     with:
-  #       xcode-version: latest-stable
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
 
-  #   - name: Install ansible
-  #     run: brew install ansible
-  #   - name: Remove pre-installed node
-  #     run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
-  #   - name: Run ansible
-  #     run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags ubuntu
+    - name: Install ansible
+      run: brew install ansible
+    - name: Remove pre-installed node
+      run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
+    - name: Run ansible
+      run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags ubuntu
