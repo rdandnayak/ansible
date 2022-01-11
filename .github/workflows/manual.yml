@@ -40,8 +40,10 @@ jobs:
 
     - name: Remove pre-installed node
       run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/n
+    - name: Install ansible repo
+      run: apt-add-repository -y ppa:ansible/ansible
     - name: Install ansible
-      run: apt-get install ansible
+      run: apt-get install -y ansible
     - name: Run ansible
       run: ansible-pull -U https://github.com/rdandnayak/ansible.git --skip-tags macos
 
