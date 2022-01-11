@@ -47,7 +47,7 @@
     - wsl
 
 - name: Install n
-  shell: curl -L https://git.io/n-install | bash -s -- -y 14.18.2
+  shell: source ~/.zshrc && curl -L https://git.io/n-install | bash -s -- -y 14.18.2
   when: not n_global.stat.exists
   args:
     executable: /bin/zsh
