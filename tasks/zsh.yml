@@ -77,3 +77,7 @@
   when: not zsh_syntax.stat.exists
   tags:
     - zsh
+- name: Change permissions for oh-my-zsh
+  shell: chmod 755 ~/.oh-my-zsh -R
+  tags:
+    - zsh
