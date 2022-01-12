@@ -78,6 +78,7 @@
   tags:
     - zsh
 - name: Change permissions for oh-my-zsh
-  shell: chmod 755 ~/.oh-my-zsh -R
+  shell: chmod 777 ~/.oh-my-zsh -R
+  when: oh_my_zsh_exists.stat.exists
   tags:
     - zsh
