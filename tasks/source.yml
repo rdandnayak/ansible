@@ -4,3 +4,9 @@
     executable: /bin/zsh
   tags:
     - zsh
+- name: Exec entire shell
+  ansible.builtin.shell: exec $SHELL
+  args:
+    executable: /bin/zsh
+  tags:
+    - zsh

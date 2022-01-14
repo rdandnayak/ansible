@@ -3,6 +3,13 @@
   tags:
     - install
     - python
+
+- name: Install PyEnv WSL/Ubuntu Dependancy
+  shell: apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
+  tags:
+    - install
+    - python
+    - wsl
 - name: Install Python 3.9
   shell: source ~/.zshrc && pyenv install 3.9.6
   args:
