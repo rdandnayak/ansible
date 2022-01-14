@@ -14,9 +14,9 @@ This will install following tools on your machine
    4. typescript
    5. ts-node
 3. node version 14 (managed by n package manager)
-4. Python version 3.9.6 (managed by pyenv package manager)
-5. vim & neovim code editor
-6. necessary dotfiles required and mentioned in repo [link to .dotfiles repository](https://github.com/rdandnayak/.dotfiles)
+<!-- 4. Python version 3.9.6 (managed by pyenv package manager) -->
+4. vim & neovim code editor
+5. necessary dotfiles required and mentioned in repo [link to .dotfiles repository](https://github.com/rdandnayak/.dotfiles)
 
 ## Setup & installation for WSL(Windows), Ubuntu or MacOs terminal
 
