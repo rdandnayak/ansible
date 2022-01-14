@@ -4,7 +4,7 @@
     - install
     - python
 - name: Install Python 3.9
-  shell: source ~/.zshrc && pyenv install 3.9
+  shell: source ~/.zshrc && pyenv install 3.9.6
   args:
     executable: /bin/zsh
   tags:
