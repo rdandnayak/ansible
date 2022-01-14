@@ -1,0 +1,5 @@
+- name: Install PyEnv & Python
+  shell: curl https://pyenv.run | bash
+  tags:
+    - install
+    - python
