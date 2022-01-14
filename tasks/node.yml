@@ -40,11 +40,11 @@
 #     - macos
 
 
-- name: Clean WSL path
-  shell: echo 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games' >> ~/.zshrc
-  when: not n_global.stat.exists
-  tags:
-    - wsl
+# - name: Clean WSL path
+#   shell: echo 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games' >> ~/.zshrc
+#   when: not n_global.stat.exists
+#   tags:
+#     - wsl
 
 - name: Install n
   shell: source ~/.zshrc && curl -L https://git.io/n-install | bash -s -- -y 14.18.2
