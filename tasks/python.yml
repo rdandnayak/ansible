@@ -3,3 +3,8 @@
   tags:
     - install
     - python
+- name: Install Python 3.9
+  shell: source ~/.zshrc && pyenv install 3.9
+  tags:
+    - install
+    - python
