@@ -44,8 +44,8 @@ jobs:
     #   run: rm -rf /usr/local/bin/node rm && sudo rm -rf /usr/local/bin/npm
     - name: Install ansible repo
       run: apt-add-repository -y ppa:ansible/ansible
-    - name: Fix path variable
-      run: export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+    # - name: Fix path variable
+    #   run: export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
     - name: Install ansible
       run: apt-get install -y ansible
     - name: Run ansible
