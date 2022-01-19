@@ -10,8 +10,19 @@
     - install
     - neovim
     - ubuntu
+
+- name: Install neovim repo
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: ppa:neovim-ppa/unstable
+  tags:
+    - install
+    - neovim
+    - ubuntu
+
 - name: Install neovim
-  shell: sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt-get install  -y neovim
+  become: yes
+  shell: apt-get install  -y neovim
   tags:
     - install
     - neovim
