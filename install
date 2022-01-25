@@ -11,9 +11,11 @@ else
 fi
 
 ## pull ansible
-# ansible-pull -U https://github.com/rdandnayak/ansible.git --ask-become-pass
+# ansible-pull -U https://github.com/rdandnayak/ansible.git --ask-become-pass && source ~/.zshrc
+e
 if [[ $OSTYPE == 'darwin'* ]]; then
-	ansible-playbook local.yml --skip-tags ubuntu,wsl --ask-become-pass
+	ansible-playbook local.yml --skip-tags ubuntu,wsl --ask-become-pass && source ~/.zshrc
 else
-	ansible-playbook local.yml --skip-tags macos,wsl --ask-become-pass
+	ansible-playbook local.yml --skip-tags macos,wsl --ask-become-pass && source ~/.zshrc
+e
 fi
